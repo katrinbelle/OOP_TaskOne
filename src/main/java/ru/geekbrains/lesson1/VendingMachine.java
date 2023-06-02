@@ -25,5 +25,16 @@ public class VendingMachine {
         }
         return null;
     }
+    public BottleOfTea getBottleOfTea(double color){
+        for (Product product : products){
+            if (product instanceof BottleOfTea){
+            if( ((BottleOfTea)product).getColor()==color)
+            {
+                return (BottleOfTea)product;
+            }
+        }
+    }
+    return null;
+    }
 
 }
