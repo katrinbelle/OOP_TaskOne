@@ -30,14 +30,18 @@ public class Program {
 
         Product bottleOfMilk
                 = new BottleOfMilk("ООО Чистый Источник", "Бутылка с молоком #1", -90.15, 1.5, 10);
-
+                
         System.out.println(bottleOfMilk.displayInfo());
+        BottleOfTea tea1
+                = new BottleOfTea("OOO Lipton", " Чай  №1", -90,1.0,"Зеленый");
+
 
         List<Product> products = new ArrayList<>();
         products.add(product1);
         products.add(product2);
         products.add(bottleOfWater1);
         products.add(bottleOfMilk);
+        products.add(tea1);
 
         VendingMachine vendingMachine = new VendingMachine(products);
         BottleOfWater bottleOfWaterResult = vendingMachine.getBottleOfWater(1.5);
@@ -47,6 +51,14 @@ public class Program {
         }
         else {
             System.out.println("Такой бутылки с водой нет в автомате.");
+        }
+        BottleOfTea botterOfTeaResult= vendingMachine.getBottleOfTea("Зеленый");
+        if (bottleOfTeaResult != null){
+            System.out.println("Вы купили:");
+            System.out.println(bottleOfTeaResult.displayInfo());
+        }
+        else {
+            System.out.println("Такого чая нет в автомате.");
         }
     }
 
